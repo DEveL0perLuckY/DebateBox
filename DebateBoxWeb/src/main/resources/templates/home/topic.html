@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>DebateBox</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+</head>
+
+<body>
+    <div layout:fragment="content">
+
+
+        <div class="container mt-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${id}"></h5>
+                    <div class="topic-container" th:if="${id == 10003}">
+                        <a th:href="@{/topic/10003}" class="dropdown-item">
+                            <img th:src="@{/images/img2.jpg}" alt="Climate Change">
+                        </a>
+                        <div class="topic-name">Climate Change</div>
+                    </div>
+                    <div class="topic-container" th:if="${id == 10004}">
+                        <a th:href="@{/topic/10004}" class="dropdown-item">
+                            <img th:src="@{/images/img1.jpg}" height="300px" width="300px"
+                                alt="Universal Basic Income (UBI)">
+                        </a>
+                        <div class="topic-name">Universal Basic Income (UBI)</div>
+                    </div>
+                    <div class="topic-container" th:if="${id == 10005}">
+                        <a th:href="@{/topic/10005}" class="dropdown-item">
+                            <img th:src="@{/images/img3.jpg}" alt="Artificial Intelligence Ethics">
+                        </a>
+                        <div class="topic-name">Artificial Intelligence Ethics</div>
+                    </div>
+                    <div class="topic-container" th:if="${id == 10006}">
+                        <a th:href="@{/topic/10006}" class="dropdown-item">
+                            <img th:src="@{/images/img4.jpg}" alt="Healthcare Reform">
+                        </a>
+                        <div class="topic-name">Healthcare Reform</div>
+                    </div>
+                    <p class="card-text mb-4" th:text="${topicDescription}"></p>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Topic Opinions</h5>
+                    <div class="opinions-container" style="height: 200px; overflow-y: auto;">
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center"
+                                th:each="opinion : ${topicOpinions}">
+                                <span th:text="${opinion.user.userName}"></span>
+                                <span th:text="${opinion.opinionText}"></span>
+                                <span class="badge bg-secondary rounded-pill"
+                                    th:text="${opinion.submissionTime}"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">My Opinion</h5>
+                    <div id="chat-messages" class="mb-3">
+                        <form th:action="@{/submitOpinion}" method="post">
+                            <div class="input-group">
+                                <input type="hidden" th:value="${id}" name="id">
+                                <input type="text" class="form-control" placeholder="Type your message here..."
+                                    id="message-input" name="opinionText">
+                                <button class="btn btn-primary" type="submit" id="send-message-btn">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>DebateBox</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body>
+    <div layout:fragment="content">
+        <style>
+            .title {
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+
+            .topic-container {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            .topic-container img {
+                width: 50%;
+                height: auto;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+
+            .topic-name {
+                font-size: 20px;
+                font-weight: bold;
+                margin-top: 10px;
+            }
+        </style>
+        <div class="container">
+            <div class="title text-center">Debate Topics</div>
+            <div class="topic-container">
+                <a th:href="@{/topic/10003}" class="dropdown-item">
+                    <img th:src="@{/images/img2.jpg}" alt="Climate Change">
+                </a>
+                <div class="topic-name">Climate Change</div>
+            </div>
+            <div class="topic-container">
+                <a th:href="@{/topic/10004}" class="dropdown-item">
+                    <img th:src="@{/images/img1.jpg}" alt="Universal Basic Income (UBI)">
+                </a>
+                <div class="topic-name">Universal Basic Income (UBI)</div>
+            </div>
+            <div class="topic-container">
+                <a th:href="@{/topic/10005}" class="dropdown-item">
+                    <img th:src="@{/images/img3.jpg}" alt="Artificial Intelligence Ethics">
+                </a>
+                <div class="topic-name">Artificial Intelligence Ethics</div>
+            </div>
+            <div class="topic-container">
+                <a th:href="@{/topic/10006}" class="dropdown-item">
+                    <img th:src="@{/images/img4.jpg}" alt="Healthcare Reform">
+                </a>
+                <div class="topic-name">Healthcare Reform</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

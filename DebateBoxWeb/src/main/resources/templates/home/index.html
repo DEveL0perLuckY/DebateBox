@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>DebateBox</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+        .carousel {
+            margin-bottom: 4rem;
+        }
+
+        .carousel-caption {
+            bottom: 3rem;
+            z-index: 10;
+        }
+
+        .carousel-item {
+            height: 32rem;
+        }
+
+        .marketing .col-lg-4 {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .marketing .col-lg-4 p {
+            margin-right: .75rem;
+            margin-left: .75rem;
+        }
+
+        .featurette-divider {
+            margin: 5rem 0;
+        }
+
+        .featurette-heading {
+            letter-spacing: -.05rem;
+        }
+
+        @media (min-width: 40em) {
+            .carousel-caption p {
+                margin-bottom: 1.25rem;
+                font-size: 1.25rem;
+                line-height: 1.4;
+            }
+
+            .featurette-heading {
+                font-size: 50px;
+            }
+        }
+
+        @media (min-width: 62em) {
+            .featurette-heading {
+                margin-top: 7rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div layout:fragment="content">
+
+        <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img th:src="@{/images/slide.jpg}" alt="slide" class="bd-placeholder-img"
+                        style="object-fit: cover; width: 100%; height: 100%;" aria-hidden="true"
+                        preserveAspectRatio="xMidYMid slice" focusable="false">
+
+                    <div class="container">
+                        <div class="carousel-caption text-start text-dark">
+                            <h1>DebateBox: A Secure Platform for Dynamic Debates</h1>
+                            <p>In today's fast-paced world, meaningful discussions and debates are often hindered by the
+                                lack of secure platforms that facilitate open dialogue while ensuring the integrity of
+                                user contributions. To address this challenge, we present DebateBox, a revolutionary software
+                                solution designed to empower users to engage in dynamic debates on various topics while
+                                ensuring non-repudiation, end-to-end encryption, and transparency.</p>
+                            <p><a class="btn btn-lg btn-secondary" href="#contact">Contact Us</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container marketing">
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading fw-normal lh-1">End-to-end Encryption</h2>
+                    <p class="lead">All messages exchanged within DebateBox are encrypted end-to-end.</p>
+                </div>
+                <div class="col-md-5">
+                    <img th:src="@{/images/img24.jpg}" alt="featureImg" class="img-fluid" height="500" width="auto">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading fw-normal lh-1">Topic-Specific Debate Boxes</h2>
+                    <p class="lead">Each topic in DebateBox has its own debate box for focused discussions.</p>
+                </div>
+                <div class="col-md-5 order-md-1">
+                    <img th:src="@{/images/img22.jpg}" alt="featureImg" class="img-fluid" height="500" width="auto">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading fw-normal lh-1">Mobile and Web Interface</h2>
+                    <p class="lead">DebateBox provides a user-friendly interface accessible via mobile and web platforms.</p>
+                </div>
+                <div class="col-md-5">
+                    <img th:src="@{/images/img23.jpg}" alt="featureImg" class="img-fluid" height="500" width="auto">
+                </div>
+            </div>
+
+            <div class="container py-5" id="how-it-works">
+                <h2 class="pb-2 border-bottom">How It Works</h2>
+                <p>DebateBox operates on a simple yet powerful principle:</p>
+                <ol>
+                    <li><strong>Topic Creation:</strong> Users can create new debate topics.</li>
+                    <li><strong>Opinion Sharing:</strong> Users can share opinions on topics.</li>
+                    <li><strong>Debate Navigation:</strong> Users can navigate through different debate topics.</li>
+                    <li><strong>Endorsement and Feedback:</strong> Users can endorse opinions and provide feedback.</li>
+                </ol>
+            </div>
+
+            <div class="container py-5" id="get-started">
+                <h2 class="pb-2 border-bottom">Get Started</h2>
+                <p>Join DebateBox today:</p>
+                <ol>
+                    <li><strong>Sign Up:</strong> Create your DebateBox account.</li>
+                    <li><strong>Explore Topics:</strong> Browse through debate topics.</li>
+                    <li><strong>Engage and Contribute:</strong> Engage with other users' opinions.</li>
+                </ol>
+                <p>Join DebateBox today!</p>
+            </div>
+
+            <div class="">
+                <div class="p-5 text-center bg-body-tertiary">
+                    <div class="container py-5">
+                        <h1 class="text-body-emphasis">About Us</h1>
+                        <p class="col-lg-8 mx-auto lead">
+                            In today's fast-paced world, meaningful discussions and debates are often hindered by the lack
+                            of secure platforms that facilitate open dialogue while ensuring the integrity of user
+                            contributions. To address this challenge, we present DebateBox, a revolutionary software
+                            solution designed to empower users to engage in dynamic debates on various topics while
+                            ensuring non-repudiation, end-to-end encryption, and transparency.
+                        </p>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
